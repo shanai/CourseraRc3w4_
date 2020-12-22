@@ -10,6 +10,7 @@ Source Data is read from [https://d396qusza40orc.cloudfront.net/getdata%2Fprojec
 3. Uses descriptive activity names to name the activities in the data set
 4. Appropriately labels the data set with descriptive variable names. 
 5. Creates an independent tidy data set with the average of each variable for each activity and each subject.
+
 Each of the above steps is clearly commented in the script.
 
 # The Output
