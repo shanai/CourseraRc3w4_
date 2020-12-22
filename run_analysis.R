@@ -19,25 +19,16 @@ datasetSubject <- rbind(trainSubject, testSubject)
 datasetX <- rbind(trainX, testX)
 datasetY <- rbind(trainY, testY)
 
-dim(datasetX)
-dim(datasetY)
-dim(datasetSubject)
-
 # Extracts only the measurements on the mean and standard deviation for each measurement
 datasetX_meanstd <- datasetX[, grep("-(mean|std)\\(\\)", features[, 2])]
 names(datasetX_meanstd) <- features[grep("-(mean|std)\\(\\)", features[, 2]), 2] 
 
-View(datasetX_meanstd)
-dim(datasetX_meanstd)
-
 # Uses descriptive activity names to name the activities in the data set
 datasetY[, 1] <- activity_labels[datasetY[, 1], 2]
 names(datasetY) <- "Activity"
-View(datasetY)
 
 # Appropriately labels the data set with descriptive variable names
 names(datasetSubject) <- "Subject"
-summary(datasetSubject)
 
 datasetMain <- cbind(datasetY, datasetX_meanstd, datasetSubject)
 names(datasetMain) <- gsub('Acc',"Acceleration",names(datasetMain))
