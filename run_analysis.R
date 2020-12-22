@@ -38,4 +38,4 @@ names(datasetMain) <- gsub('Mag',"Magnitude",names(datasetMain))
 tidyData<-aggregate(. ~Subject + Activity, datasetMain, mean)
 tidyData<-tidyData[order(tidyData$Subject,tidyData$Activity),]
 
-write.table(tidyData, file = "datasetTidy.txt")
+write.table(tidyData, file = "datasetTidy.txt", row.name=FALSE)
